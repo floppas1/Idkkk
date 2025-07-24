@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>StudyHub Pro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .hidden { display: none; }
+        .game { 
+            border: 1px solid #ccc; 
+            padding: 15px; 
+            margin: 15px 0;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        nav {
+            margin: 15px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        #settings {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        input[type="password"] {
+            padding: 8px;
+            width: 200px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>StudyHub Pro</h1>
+        <nav>
+            <a href="#math">Math</a> | 
+            <a href="#science">Science</a> | 
+            <a href="#settings">Settings</a>
+            <span id="gamesTab" class="hidden"> | <a href="#games">Games</a></span>
+        </nav>
+    </header>
+
+    <section id="settings">
+        <h2>Parental Controls</h2>
+        <input type="password" id="parentPassword" placeholder="Enter password">
+        <button onclick="checkPassword()">Submit</button>
+    </section>
+
+    <section id="games" class="hidden">
+        <h2>Educational Games</h2>
+        <div class="game" id="mathPuzzle">
+            <h3>Math Puzzle Challenge</h3>
+            <p>Solve these math problems to unlock rewards!</p>
+            <!-- Game content would be here -->
+        </div>
+        <div class="game" id="scienceTrivia">
+            <h3>Science Trivia</h3>
+            <p>Test your science knowledge with these questions!</p>
+            <!-- Game content would be here -->
+        </div>
+    </section>
+
+    <script>
+        function checkPassword() {
+            if(document.getElementById('parentPassword').value === "no games") {
+                document.getElementById('gamesTab').classList.remove('hidden');
+                document.getElementById('games').classList.remove('hidden');
+                alert("Games section unlocked");
+            } else {
+                alert("Incorrect password");
+            }
+        }
+    </script>
+</body>
+</html>
