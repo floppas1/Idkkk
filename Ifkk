@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>StudyHub Pro</title>
+    <style>
+        .hidden { display: none; }
+        .game { border: 1px solid #ccc; padding: 10px; margin: 10px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>StudyHub Pro</h1>
+        <nav>
+            <a href="#math">Math</a> | 
+            <a href="#science">Science</a> | 
+            <a href="#settings">Settings</a>
+            <span id="gamesTab" class="hidden"> | <a href="#games">Games</a></span>
+        </nav>
+    </header>
+
+    <section id="settings">
+        <h2>Parental Controls</h2>
+        <input type="password" id="parentPassword" placeholder="Enter password">
+        <button onclick="checkPassword()">Submit</button>
+    </section>
+
+    <section id="games" class="hidden">
+        <h2>Educational Games</h2>
+        <div class="game" id="mathPuzzle">
+            <h3>Math Puzzle Challenge</h3>
+            <!-- Game content would be here -->
+        </div>
+        <div class="game" id="scienceTrivia">
+            <h3>Science Trivia</h3>
+            <!-- Game content would be here -->
+        </div>
+    </section>
+
+    <script>
+        function checkPassword() {
+            if(document.getElementById('parentPassword').value === "no games") {
+                document.getElementById('gamesTab').classList.remove('hidden');
+                document.getElementById('games').classList.remove('hidden');
+                alert("Games section unlocked");
+            } else {
+                alert("Incorrect password");
+            }
+        }
+        
+        // Games would be implemented with JavaScript here
+    </script>
+</body>
+</html>
